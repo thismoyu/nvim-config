@@ -1,0 +1,1 @@
+-- only store the lsp configuration.

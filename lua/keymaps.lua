@@ -1,4 +1,11 @@
--- only store the keymap configuration.
+-- only store the global keymap configuration.
+
+-- 这个函数需要传入四个参数，分别是 mode , lhs , rhs , opts。
+-- mode: n(normal),i(insert),v(view)等
+-- lhs : 对应的按键
+-- rhs : 对应的功能
+-- opts: 相应的设置
+-- vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 
 -- define common options
 local opts = {
@@ -6,6 +13,9 @@ local opts = {
     silent = true,       -- do not show message
 }
 
+-- 设置空格为leader
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 -----------------
 -- Normal mode --
 -----------------
@@ -28,6 +38,6 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 -- Visual mode --
 -----------------
 
--- Hint: start visual mode with the same area as the previous area and the same mode
+-- visual默认下 < , > 缩进
 vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)

@@ -1,0 +1,10 @@
+return {
+    {
+        "ggandor/leap.nvim",
+        -- version = "*",
+        -- dependencies = {"nvim-tree/nvim-web-devicons"},
+        config = function()
+            require('leap').create_default_mappings()
+        end
+    }
+}

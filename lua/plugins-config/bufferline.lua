@@ -8,6 +8,8 @@ end
 
 bufferline.setup({
 	options = {
+		-- 模式改为 tabs，只显示真实的tabs 不显示buffers
+        -- mode = "tabs",
 		-- 以下两个命令需要 moll/vim-bbye 插件
 		-- close_command = "bdelete! %d",       -- 点击关闭按钮关闭
 		-- right_mouse_command = "bdelete! %d", -- 右键点击关闭
@@ -39,3 +41,9 @@ bufferline.setup({
 -- vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 vim.keymap.set("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 vim.keymap.set("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+-- 关闭当前buffer
+vim.keymap.set("n", "<C-w>", ":bdelete %<CR>", opt)
+-- 根据picker选择要关闭的buffer
+vim.keymap.set("n", "<leader>bp", ":BufferLinePickClose<CR>", {noremap = true, silent = true})
+-- 删除当前buffer之外的所有buffer
+vim.keymap.set("n", "<leader>bo", ":BufferLineCloseLeft<CR>:BufferLineCloseRight<CR>", {noremap = true, silent = true})

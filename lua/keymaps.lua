@@ -12,6 +12,8 @@ local opts = {
     noremap = true,      -- non-recursive
     silent = true,       -- do not show message
 }
+-- Ctrl + [ 映射到Esc
+-- vim.keymap.set("n", "<C-[>", "Esc", opt)
 
 -- 设置空格为leader
 vim.g.mapleader = " "
@@ -21,11 +23,11 @@ vim.g.maplocalleader = " "
 -----------------
 
 -- Hint: see `:h vim.map.set()`
--- Better window navigation
-vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
-vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
-vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
-vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
+-- 切换窗口
+vim.keymap.set('n', '<A-h>', '<C-w>h', opts)
+vim.keymap.set('n', '<A-j>', '<C-w>j', opts)
+vim.keymap.set('n', '<A-k>', '<C-w>k', opts)
+vim.keymap.set('n', '<A-l>', '<C-w>l', opts)
 
 -- Resize with arrows
 -- delta: 2 lines
@@ -41,3 +43,8 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 -- visual默认下 < , > 缩进
 vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
+
+-- terminal
+-- vim.keymap.set("n", "<leader>t", ":sp | terminal<CR>", opt)
+-- vim.keymap.set("n", "<leader>vt", ":vsp | terminal<CR>", opt)
+-- vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", opt)

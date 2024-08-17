@@ -10,7 +10,9 @@ end
 -- 默认启用bash （bashls）
 -- 需要安装语言服务
 -- npm i -g bash-language-server
-lspconfig['bashls'].setup({})
+-- lspconfig['bashls'].setup({})
+-- bashls 改用mason 安装之后，安装不上
+
 
 -- 配置启动并连接TypeScript的语言服务器
 -- typescript-language-server --stdio
@@ -41,3 +43,19 @@ lspconfig['bashls'].setup({})
 -- 		"--compile-commands-dir=*compile-commands-dir*",
 -- 	},
 -- })
+
+
+-- python: pylsp
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp
+lspconfig.pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'W391'},
+          maxLineLength = 100
+        }
+      }
+    }
+  }
+}

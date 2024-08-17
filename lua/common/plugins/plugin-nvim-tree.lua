@@ -1,3 +1,4 @@
+-- 左侧的文件列表插件
 return {
     {
         "nvim-tree/nvim-tree.lua",
@@ -6,7 +7,7 @@ return {
         dependencies = {"nvim-tree/nvim-web-devicons"},
         config = function()
             require("nvim-tree").setup {}
-            require("../plugins-config/nvim-tree")
+            require("../../common/config/config-nvim-tree")
         end
     }
 }

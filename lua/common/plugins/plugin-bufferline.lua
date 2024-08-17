@@ -1,10 +1,11 @@
 return {
     {
-        "ggandor/leap.nvim",
+        "akinsho/bufferline.nvim",
         -- version = "*",
         -- dependencies = {"nvim-tree/nvim-web-devicons"},
         config = function()
-            require('leap').create_default_mappings()
+            require("bufferline").setup {}
+            require("../../common/config/config-bufferline")
         end
     }
 }

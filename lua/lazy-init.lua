@@ -21,4 +21,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- 3. 加载lazy.nvim模块
-require("lazy").setup("plugins")
+-- require("lazy").setup({"lsp.plugins"})
+
+-- 3. 加载lazy.nvim模块
+require("lazy").setup({
+  spec = {
+    -- load common plugins
+    { import = "common.plugins" },
+    -- load lsp config
+    { import = "lsp.plugins" },
+  }
+})

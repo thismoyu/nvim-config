@@ -1,3 +1,4 @@
+-- 跟 feline 类似，提供statusbar美化
 return {
     {
         'nvim-lualine/lualine.nvim',

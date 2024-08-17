@@ -2,8 +2,9 @@
 return {
     {
         'smoka7/hop.nvim',
-        -- lazy = true,
-        -- keys = { "E" },
+        lazy = true,
+        -- only load when press f.
+        keys = { "f" , "F" },
         config = function()
             require("hop").setup({})
             require("../../common/config/config-hop")

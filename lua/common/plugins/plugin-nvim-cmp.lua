@@ -3,7 +3,10 @@ return {
     {
         -- Auto-completion engine
         "hrsh7th/nvim-cmp",
+        -- lazy load cmp on InsertEnter
+        event = "InsertEnter",
         -- version = "*",
+        -- all dependencies will load afte nvim-cmp loaded.
         dependencies = {
             "onsails/lspkind.nvim", -- 这个是美化用的
             -- 下面几个是补全候选来源

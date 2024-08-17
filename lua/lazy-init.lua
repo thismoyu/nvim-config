@@ -1,3 +1,5 @@
+-- https://lazy.folke.io/spec/examples
+
 -- 1. 准备lazy.nvim模块（存在性检测）
 -- stdpath("data")
 -- macOS/Linux: ~/.local/share/nvim

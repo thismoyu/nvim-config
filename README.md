@@ -1,3 +1,3 @@
 ### How to Install
-git clone https://github.com/brettzhang/nvim-config ~/.config/nvim
+`git clone git@github.com:brettzhang/nvim-config.git  ~/.config/nvim`
 

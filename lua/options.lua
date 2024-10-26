@@ -38,3 +38,7 @@ vim.opt.autoindent = true --自动缩进
 -- file
 vim.opt.autoread = true -- 自动加载外部修改
 vim.opt.backup = false -- 关闭自动自动备份
+
+-- lurarocks 关闭自动的rocks插件管理，
+-- vim.rocks.hererocks = false
+-- opts.rocks.enable = false

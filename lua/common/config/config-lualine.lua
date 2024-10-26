@@ -12,7 +12,9 @@ end
 -- +-------------------------------------------------+
 lualine.setup({
 	options = {
-		theme = "auto",
+		-- theme = "auto",
+		-- need dracula theme.
+		theme = 'dracula-nvim'
 		component_separators = { left = "|", right = "|" },
 		-- https://github.com/ryanoasis/powerline-extra-symbols
 		section_separators = { left = " < ", right = " > " },

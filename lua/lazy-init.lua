@@ -31,8 +31,49 @@ require("lazy").setup({
     -- colorscheme
     { import = "colorscheme"},
     -- load common plugins
-    { import = "common.plugins" },
+    { import = "plugins" },
     -- load lsp config
     { import = "lsp.plugins" },
-  }
+  },
+  defaults = {
+        lazy = false,
+  },
+  performance = {
+      rtp = {
+          disabled_plugins = {
+              "2html_plugin",
+              "tohtml",
+              "getscript",
+              "getscriptPlugin",
+              "gzip",
+              "logipat",
+              "netrw",
+              "netrwPlugin",
+              "netrwSettings",
+              "netrwFileHandlers",
+              "matchit",
+              "matchparen",
+              "man",
+              "tar",
+              "tarPlugin",
+              "rrhelper",
+              "spellfile_plugin",
+              "shada",
+              "vimball",
+              "vimballPlugin",
+              "zip",
+              "zipPlugin",
+              "tutor",
+              "rplugin",
+              "syntax",
+              "synmenu",
+              "spellfile",
+              "optwin",
+              "compiler",
+              "bugreport",
+              "ftplugin",
+              "editorconfig",
+          },
+      },
+  },
 })

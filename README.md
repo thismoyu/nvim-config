@@ -1,3 +1,11 @@
 ### How to Install
 `git clone git@github.com:brettzhang/nvim-config.git  ~/.config/nvim`
 
+### Pugins
+
+| 功能 | 插件 |
+| ---- | ---- |
+|      |      |
+|      |      |
+|      |      |
+

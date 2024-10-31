@@ -24,10 +24,10 @@ vim.g.maplocalleader = " "
 
 -- Hint: see `:h vim.map.set()`
 -- 切换窗口
-vim.keymap.set('n', '<A-h>', '<C-w>h', opts)
-vim.keymap.set('n', '<A-j>', '<C-w>j', opts)
-vim.keymap.set('n', '<A-k>', '<C-w>k', opts)
-vim.keymap.set('n', '<A-l>', '<C-w>l', opts)
+vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
+vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
+vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
+vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
 
 -- Resize with arrows
 -- delta: 2 lines

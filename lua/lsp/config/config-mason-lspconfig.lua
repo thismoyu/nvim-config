@@ -24,9 +24,13 @@ if not status then
 end
 
 masonlspconfig.setup({
-    -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+    -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
     -- A list of servers to automatically install if they're not already installed
     
     -- bashls 安装不上？
-    ensure_installed = { 'pylsp' },
+    ensure_installed = { 
+        'pylsp' , -- python 
+        'lua_ls', -- lua
+        'clangd', -- c/c++
+    },
 })

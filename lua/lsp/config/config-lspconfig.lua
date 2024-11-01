@@ -24,7 +24,7 @@ end
 -- 使neovim从当前工作目录中的.nvim.lua / .nvimrc /.exrc中读取局部属性，避免
 -- lsp clangd等 需要频繁修改nvim配置引起的不变。
 -- 使用方式：
--- 在工作目录创建.nvim.lua文件。考入如下配置，修改compile-commands-dir配置
+-- 在工作目录创建.nvim.lua文件。写入如下配置，修改compile-commands-dir配置
 -- 例如：/home5/develop/u0/alps/vendor/agold/apps/ACamera2/agold/jni_isphal_aidl/.nvim.lua
 -- 其中 --compile-commands-dir 指定为： /home5/develop/u0/alps/out/full_g78v78c2k_dfl_eea-userdebug/out_sys/soong/development/ide/compdb
 -- 该文件夹下： 有compile_commands.json文件
@@ -57,5 +57,40 @@ lspconfig.pylsp.setup{
         }
       }
     }
+  }
+}
+
+-- lua
+lspconfig.lua_ls.setup{
+  on_init = function(client)
+    if client.workspace_folders then
+      local path = client.workspace_folders[1].name
+      if vim.uv.fs_stat(path..'/.luarc.json') or vim.uv.fs_stat(path..'/.luarc.jsonc') then
+        return
+      end
+    end
+
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      runtime = {
+        -- Tell the language server which version of Lua you're using
+        -- (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT'
+      },
+      -- Make the server aware of Neovim runtime files
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME
+          -- Depending on the usage, you might want to add additional paths here.
+          -- "${3rd}/luv/library"
+          -- "${3rd}/busted/library",
+        }
+        -- or pull in all of 'runtimepath'. NOTE: this is a lot slower and will cause issues when working on your own configuration (see https://github.com/neovim/nvim-lspconfig/issues/3189)
+        -- library = vim.api.nvim_get_runtime_file("", true)
+      }
+    })
+  end,
+  settings = {
+    Lua = {}
   }
 }

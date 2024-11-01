@@ -44,6 +44,10 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 
+-- 单行或多行移动
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- terminal
 -- vim.keymap.set("n", "<leader>t", ":sp | terminal<CR>", opt)
 -- vim.keymap.set("n", "<leader>vt", ":vsp | terminal<CR>", opt)

@@ -5,7 +5,7 @@ return {
         "freddiehaddad/feline.nvim",
         lazy = true,
         event = 'BufRead',
-        dependencies = {"nvim-tree/nvim-web-devicons"},
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             local one_monokai = {
                 fg = "#abb2bf",
@@ -195,7 +195,7 @@ return {
                 c.vim_mode,
                 c.gitBranch,
                 c.gitDiffAdded,
-              c.gitDiffRemoved,
+                c.gitDiffRemoved,
                 c.gitDiffChanged,
                 c.separator,
             }
@@ -235,7 +235,7 @@ return {
                 theme = one_monokai,
                 vi_mode_colors = vi_mode_colors,
             }
-            require("feline").winbar.setup()       -- to use winbar
+            require("feline").winbar.setup() -- to use winbar
         end,
     }
 }

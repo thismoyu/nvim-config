@@ -2,7 +2,7 @@
 return {
     {
         -- https://github.com/windwp/nvim-autopairs
-       'windwp/nvim-autopairs',
+        'windwp/nvim-autopairs',
         event = "InsertEnter",
         lazy = true,
         config = true
@@ -10,3 +10,4 @@ return {
         -- this is equivalent to setup({}) function
     }
 }
+

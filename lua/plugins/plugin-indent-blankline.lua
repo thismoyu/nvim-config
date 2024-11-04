@@ -5,6 +5,18 @@ return {
         -- See `:help ibl`
         main = 'ibl',
         opts = {},
+        config = function()
+            require("ibl").overwrite {
+                exclude = {
+                    filetypes = {
+                        "help",
+                        "neo-tree",
+                        "man",
+                        "lspinfo",
+                        "dashboard"
+                    }
+                }
+            }
+        end
     },
 }
-

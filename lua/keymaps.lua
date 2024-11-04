@@ -9,8 +9,8 @@
 
 -- define common options
 local opts = {
-    noremap = true,      -- non-recursive
-    silent = true,       -- do not show message
+    noremap = true, -- non-recursive
+    silent = true,  -- do not show message
 }
 -- Ctrl + [ 映射到Esc
 -- vim.keymap.set("n", "<C-[>", "Esc", opt)

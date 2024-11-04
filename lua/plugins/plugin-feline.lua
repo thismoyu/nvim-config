@@ -3,6 +3,8 @@ return {
         -- 屏幕下方的状态栏
         -- https://github.com/freddiehaddad/feline.nvim
         "freddiehaddad/feline.nvim",
+        lazy = true,
+        event = 'BufRead',
         dependencies = {"nvim-tree/nvim-web-devicons"},
         config = function()
             local one_monokai = {

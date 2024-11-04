@@ -52,3 +52,7 @@ vim.opt.wrap = false
 -- lurarocks 关闭自动的rocks插件管理，
 -- vim.rocks.hererocks = false
 -- opts.rocks.enable = false
+
+-- disble nvim netrw. use neo-tree instead of this.
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1

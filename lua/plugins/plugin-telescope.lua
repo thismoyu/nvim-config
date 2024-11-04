@@ -4,6 +4,10 @@ return {
     {
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' },
+        lazy = true,
+        keys = { 
+            "<leader>o", { "<cmd>Outline<CR>", mode = "n" ,desc = "Toggle Outline"}
+        },
         config = function()
             require('telescope').setup{
 

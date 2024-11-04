@@ -8,6 +8,7 @@ return {
         "L3MON4D3/LuaSnip",
         version = "v2.*",
         lazy = true,
+        event = 'BufRead',
         dependencies = { 
             "rafamadriz/friendly-snippets",
             -- 此插件用于将 luaship 和 nvim-cmp 作为适配器连接起来

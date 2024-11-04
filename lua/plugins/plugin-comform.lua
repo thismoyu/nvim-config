@@ -4,9 +4,20 @@ return {
     {
         'stevearc/conform.nvim',
         lazy = true,
-        event = 'BufRead',
+        event = 'BufWritePre',
+        cmd = { 'ConformInfo' },
         dependencies = {
             -- ""
+        },
+        keys = {
+            {
+                '<leader>f',
+                function()
+                    require('conform').format { async = true, lsp_format = 'fallback' }
+                end,
+                mode = '',
+                desc = '[F]ormat buffer',
+            },
         },
         config = function()
             require("conform").setup({
@@ -33,3 +44,4 @@ return {
         end
     }
 }
+

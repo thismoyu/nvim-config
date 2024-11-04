@@ -22,12 +22,19 @@ vim.g.maplocalleader = " "
 -- Normal mode --
 -----------------
 
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', opts)
+
+-- 打开快速修改列表 Diagnostic keymaps
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
 -- Hint: see `:h vim.map.set()`
 -- 切换窗口
-vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
-vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
-vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
-vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Resize with arrows
 -- delta: 2 lines

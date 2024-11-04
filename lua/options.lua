@@ -7,7 +7,13 @@ vim.o.fileencoding = "UTF-8"
 vim.opt.termguicolors = true
 
 -- 系统剪贴板
-vim.opt.clipboard = 'unnamedplus'
+-- Sync clipboard between OS and Neovim.
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 -- 启用鼠标
@@ -41,6 +47,22 @@ vim.opt.smartcase = true -- but make it case sensitive if an uppercase is entere
 
 -- indent
 vim.opt.autoindent = true --自动缩进
+-- Enable break indent
+vim.opt.breakindent = true
+
+
+-- Decrease update time
+vim.opt.updatetime = 250
+-- Decrease mapped sequence wait time
+-- Displays which-key popup sooner
+vim.opt.timeoutlen = 300
+
+
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- file
 vim.opt.autoread = true -- 自动加载外部修改
@@ -53,6 +75,16 @@ vim.opt.wrap = false
 -- vim.rocks.hererocks = false
 -- opts.rocks.enable = false
 
+-- 系统有带nerd图标字体
+vim.g.have_nerd_font = true
+
 -- disble nvim netrw. use neo-tree instead of this.
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
+
+-- 命令的修改在prview中显示
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 10

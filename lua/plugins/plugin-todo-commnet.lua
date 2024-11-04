@@ -5,7 +5,7 @@ return {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         lazy = true,
-        event = 'BufRead',
+        event = 'VimEnter',
         opts = {
             -- keywords recognized as todo comments
             keywords = {

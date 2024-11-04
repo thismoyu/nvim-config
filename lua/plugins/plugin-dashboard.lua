@@ -4,12 +4,12 @@ return {
     {
         'nvimdev/dashboard-nvim',
         event = 'VimEnter',
-        dependencies = { 
+        dependencies = {
             'nvim-tree/nvim-web-devicons',
             'nvim-telescope/telescope.nvim',
         },
         config = function()
-            require('dashboard').setup{
+            require('dashboard').setup {
                 theme = 'hyper',
                 config = {
                     week_header = {
@@ -17,11 +17,11 @@ return {
                     },
                     packages = { enable = true }, -- show how many plugins neovim loaded
                     shortcut = {
-                        { 
-                            desc = 'Plugin Update', 
-                            group = '@property', 
-                            action = 'Lazy update', 
-                            key = 'u' 
+                        {
+                            desc = 'Plugin Update',
+                            group = '@property',
+                            action = 'Lazy update',
+                            key = 'u'
                         },
                         {
                             desc = 'Find Files',
@@ -40,4 +40,3 @@ return {
         end
     }
 }
-

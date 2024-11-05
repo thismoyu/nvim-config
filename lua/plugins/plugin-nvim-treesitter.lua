@@ -2,7 +2,7 @@
 -- 用于代码高亮
 -- 此功能依赖于 tree-sitter 命令，因此需要安装：
 -- https://github.com/tree-sitter/tree-sitter/releases
--- 
+--
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -43,8 +43,9 @@ return {
                 },
 
                 -- 启用彩色括号
-                rainbow = { enable = true, extended_mode = true, max_file_lines = nil}
+                rainbow = { enable = true, extended_mode = true, max_file_lines = nil }
             }
         end
     }
 }
+

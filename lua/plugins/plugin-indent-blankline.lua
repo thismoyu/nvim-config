@@ -7,14 +7,24 @@ return {
         opts = {},
         config = function()
             require("ibl").overwrite {
+                indent = {
+                    char = "│",
+                    tab_char = "│",
+                },
                 exclude = {
                     filetypes = {
                         "help",
+                        "alpha",
+                        "dashboard",
                         "neo-tree",
-                        "man",
-                        "lspinfo",
-                        "dashboard"
-                    }
+                        "Trouble",
+                        "trouble",
+                        "lazy",
+                        "mason",
+                        "notify",
+                        "toggleterm",
+                        "lazyterm",
+                    },
                 }
             }
         end

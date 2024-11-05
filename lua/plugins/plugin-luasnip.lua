@@ -1,7 +1,6 @@
 -- https://github.com/L3MON4D3/LuaSnip
 -- 代码补全ui层，通过cmp_luasnp连接 nvim-cmp，从nvim-cmp获取片段进行补全
--- 这里使用 friendly-snippets 中的片段，远不出luasnip提供的写法太特么复杂了。
--- 搞不懂！！！
+-- 这里使用 friendly-snippets 中的片段，原生luasnip提供的写法太特么复杂了，搞不懂！！！
 return {
     {
         -- Code snippet engine

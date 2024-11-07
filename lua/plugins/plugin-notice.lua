@@ -8,7 +8,7 @@ return {
             -- OPTIONAL:
             --   `nvim-notify` is only needed, if you want to use the notification view.
             --   If not available, we use `mini` as the fallback
-            -- "rcarriga/nvim-notify",
+            "rcarriga/nvim-notify",
         },
         config = function()
             require("noice").setup({
@@ -17,13 +17,13 @@ return {
                     inc_rename = true,     -- enables an input dialog for inc-rename.nvim
                     lsp_doc_border = true, -- add a border to hover docs and signature help
                 },
-                cmdline = {
-                    view = "cmdline",
-                },
+                -- cmdline = {
+                --     view = "cmdline",
+                -- },
                 messages = {
                     -- NOTE: If you enable messages, then the cmdline is enabled automatically.
                     -- This is a current Neovim limitation.
-                    enabled = false,              -- enables the Noice messages UI
+                    enabled = true,              -- enables the Noice messages UI
                     view = "notify",             -- default view for messages
                     view_error = "notify",       -- view for errors
                     view_warn = "notify",        -- view for warnings
@@ -40,7 +40,7 @@ return {
                                 { find = "; before #%d+" },
                             },
                         },
-                        view = "mini",
+                        -- view = "mini",
                     },
                 },
                 lsp = {

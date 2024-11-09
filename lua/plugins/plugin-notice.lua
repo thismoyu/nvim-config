@@ -11,6 +11,14 @@ return {
             "rcarriga/nvim-notify",
         },
         config = function()
+            require("notify").setup {
+                fps = 30,
+                level = 1,
+                -- render = "compact",
+                stages = "static",
+                max_width = 100,
+
+            }
             require("noice").setup({
                 presets = {
                     -- command_palette = true, -- position the cmdline and popupmenu together

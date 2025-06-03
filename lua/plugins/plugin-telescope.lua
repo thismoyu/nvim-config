@@ -8,9 +8,6 @@ return {
             { 'nvim-telescope/telescope-ui-select.nvim' },
         },
         lazy = true,
-        keys = {
-            "<leader>o", { "<cmd>Outline<CR>", mode = "n", desc = "Toggle Outline" }
-        },
         config = function()
             require('telescope').setup {
                 -- pickers = {}

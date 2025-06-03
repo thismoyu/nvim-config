@@ -85,8 +85,6 @@ map("v", ">", ">gv")
 -- Move Lines
 map("n", "<S-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
 map("n", "<S-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
-map("i", "<S-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
-map("i", "<S-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 map("v", "<S-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
 map("v", "<S-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 

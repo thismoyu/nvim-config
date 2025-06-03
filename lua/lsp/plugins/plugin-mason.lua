@@ -2,14 +2,11 @@
 return {
 	{
 		-- LSP manager
-		"williamboman/mason.nvim",
+	    "mason-org/mason.nvim",
 		dependencies = {
-			"williamboman/mason-lspconfig.nvim",
-			"mason-org/mason-registry",
+			"mason-org/mason-lspconfig.nvim",
 		},
 		config = function()
-			require("mason").setup({})
-			require("mason-lspconfig").setup({})
 			require("../../lsp/config/config-mason-lspconfig")
 		end,
 	},

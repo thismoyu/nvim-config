@@ -86,7 +86,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = event.buf, desc = "LSP: Goto Declaration" })
 		vim.keymap.set("n", "gr", function()
-			-- require('telescope.builtin').lsp_references()
 			require("snacks").picker.lsp_references()
             -- vim.lsp.buf.references()
 		end, { buffer = event.buf, desc = "LSP: Goto References" })

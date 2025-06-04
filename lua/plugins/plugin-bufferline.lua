@@ -17,7 +17,8 @@ return {
             { "]b",         "<cmd>BufferLineCycleNext<cr>",            desc = "Next Buffer" },
             { "[B",         "<cmd>BufferLineMovePrev<cr>",             desc = "Move buffer prev" },
             { "]B",         "<cmd>BufferLineMoveNext<cr>",             desc = "Move buffer next" },
-            { "<C-w>",      "<cmd>bdelete  %d<cr>",                    desc = "Close current buffer" },
+            { "<C-w>",      "<cmd>:lua Snacks.bufdelete()<cr>",             desc = "Close current buffer" },
+            -- { "<C-w>",      "<cmd>bdelete  %d<cr>",                    desc = "Close current buffer" },
         },
         opts = {
             options = {

@@ -78,16 +78,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				if not result or vim.tbl_isempty(result) then
 					vim.notify("No definition found", vim.log.levels.INFO)
 				else
-					-- require("snacks").picker.lsp_definitions()
-                    vim.lsp.buf.definition()
+					require("snacks").picker.lsp_definitions()
+                    -- vim.lsp.buf.definition()
 				end
 			end)
 		end, { buffer = event.buf, desc = "LSP: Goto Definition" })
 
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = event.buf, desc = "LSP: Goto Declaration" })
 		vim.keymap.set("n", "gr", function()
-			require('telescope.builtin').lsp_references()
-			-- require("snacks").picker.lsp_references()
+			-- require('telescope.builtin').lsp_references()
+			require("snacks").picker.lsp_references()
             -- vim.lsp.buf.references()
 		end, { buffer = event.buf, desc = "LSP: Goto References" })
 

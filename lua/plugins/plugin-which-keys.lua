@@ -4,6 +4,8 @@ return {
         'folke/which-key.nvim',
         event = 'VimEnter', -- Sets the loading event to 'VimEnter'
         opts = {
+            -- 提示风格为悬浮窗
+            preset = "helix",
             icons = {
                 -- set icon mappings to true if you have a Nerd Font
                 mappings = vim.g.have_nerd_font,

@@ -5,4 +5,4 @@ require('cmds')
 
 require('lazy-init')
 -- lsp config
-require('lsp.lsp')
+require('lsp')

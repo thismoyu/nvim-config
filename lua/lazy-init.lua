@@ -31,12 +31,8 @@ vim.opt.rtp:prepend(lazypath)
 -- 3. 加载lazy.nvim模块
 require("lazy").setup({
   spec = {
-    -- colorscheme
     { import = "colorscheme"},
-    -- load common plugins
     { import = "plugins" },
-    -- load lsp config
-    { import = "lsp.plugins" },
   },
   defaults = {
         lazy = false,

@@ -6,6 +6,7 @@ return {
         "hrsh7th/nvim-cmp",
         -- lazy load cmp on InsertEnter
         event = "InsertEnter",
+        enabled = false,
         -- version = "*",
         -- all dependencies will load afte nvim-cmp loaded.
         dependencies = {

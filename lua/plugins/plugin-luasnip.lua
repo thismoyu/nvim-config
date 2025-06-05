@@ -8,6 +8,7 @@ return {
         version = "v2.*",
         lazy = true,
         event = 'BufRead',
+        enabled = false,
         dependencies = {
             "rafamadriz/friendly-snippets",
             -- 此插件用于将 luaship 和 nvim-cmp 作为适配器连接起来

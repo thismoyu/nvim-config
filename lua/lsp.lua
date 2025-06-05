@@ -13,9 +13,22 @@ vim.o.exrc = true
 -- lsp clangd等 需要频繁修改nvim配置引起的不变。
 -- 使用方式：
 -- 在工作目录创建.nvim.lua文件。写入如下配置，修改compile-commands-dir配置
--- 例如：/home5/develop/u0/alps/vendor/agold/apps/ACamera2/agold/jni_isphal_aidl/.nvim.lua
--- 其中 --compile-commands-dir 指定为： /home5/develop/u0/alps/out/full_g78v78c2k_dfl_eea-userdebug/out_sys/soong/development/ide/compdb
--- 该文件夹下： 有compile_commands.json文件(需要aidegen 工具生成)
+-- 例如：/home2/develop/v0/alps/vendor/agold/apps/ACamera2/agui/jni/isphal/aidl/.nvim.lua 
+
+-- step 0.  0.9+ nvim使用exrc特性。需要将.nvim.lua文件加入trust列表，否则会报错：
+-- 通过nvim打开 .nvim.lua 然后执行 :trust , 回车即可，不需要参数
+
+-- step 1. 通过命令生成 compile_commands.json
+-- aidegen libjni_custom_isphal_impl_aidl -s -n
+
+-- step 2. 添加以下内容，修改对应的路径（参考example中的对应文件）
+-- vim.lsp.config['clangd'] = {
+--   cmd = { 
+--   	'clangd',
+--   	'-compile-commands-dir',
+--   	'/home2/develop/v0/alps/out/full_g71v78c2k_dfl_tee-userdebug/out_sys/soong/development/ide/compdb'
+--   },
+-- }
 
 
 ----- 在 QuickFix 中查看符号，例如变量、函数等

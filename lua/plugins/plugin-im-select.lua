@@ -1,5 +1,8 @@
 return {
 	{
+        -- window im-select.exe 下载路径：
+        -- https://github.com/daipeihust/im-select/tree/master/win/out/x64
+        -- 然后将对应的文件夹加入环境变量，或者 default_command 填写完整路径
 		"keaising/im-select.nvim",
 		config = function()
 			require("im_select").setup({
@@ -11,7 +14,7 @@ return {
 				--               "1" for Fcitx
 				--               "xkb:us::eng" for ibus
 				-- You can use `im-select` or `fcitx5-remote -n` to get the IM's name
-				default_im_select = "keyboard-us",
+				default_im_select = "1033",
 
 				-- Can be binary's name, binary's full path, or a table, e.g. 'im-select',
 				-- '/usr/local/bin/im-select' for binary without extra arguments,
@@ -19,7 +22,7 @@ return {
 				-- For Windows/WSL, default: "im-select.exe"
 				-- For macOS, default: "macism"
 				-- For Linux, default: "fcitx5-remote" or "fcitx-remote" or "ibus"
-				default_command = "fcitx5-remote",
+				default_command = "im-select.exe",
 
 				-- Restore the default input method state when the following events are triggered
 				set_default_events = { "VimEnter", "FocusGained", "InsertLeave", "CmdlineLeave" },

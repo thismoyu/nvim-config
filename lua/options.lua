@@ -91,4 +91,9 @@ vim.opt.scrolloff = 10
 
 vim.o.winborder = 'rounded'
 
+-- 0.11之后虚拟文本不再默认打开，且改为只显示光标行的信息
+vim.diagnostic.config({
+  virtual_text = { current_line = true }
+})
+
 vim.cmd [[ set iskeyword+=-]]

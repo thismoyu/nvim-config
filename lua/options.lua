@@ -89,4 +89,6 @@ vim.opt.inccommand = 'split'
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+vim.o.winborder = 'rounded'
+
 vim.cmd [[ set iskeyword+=-]]

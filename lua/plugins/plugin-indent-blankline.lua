@@ -5,6 +5,7 @@ return {
         -- See `:help ibl`
         main = 'ibl',
         opts = {},
+        enabled = false,   -- replaced by mini.indentscope
         config = function()
             require("ibl").overwrite {
                 indent = {

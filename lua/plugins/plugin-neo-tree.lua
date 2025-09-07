@@ -3,7 +3,8 @@ return {
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
-		lazy = true,
+		lazy = false, -- neo-tree will lazily load itself
+        enabled = true,
 		keys = {
 			{
 				"<leader>e",
@@ -14,12 +15,11 @@ return {
 				desc = "Explorer NeoTree (cwd)",
 			},
 		},
-		dpendencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-		},
+        dependencies = {
+          "nvim-lua/plenary.nvim",
+          "MunifTanjim/nui.nvim",
+          "nvim-tree/nvim-web-devicons", -- optional, but recommended
+        },
 		config = function()
 			require("neo-tree").setup({
 				sources = {

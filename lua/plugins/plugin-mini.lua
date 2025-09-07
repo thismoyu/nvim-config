@@ -2,6 +2,7 @@
 return {
     {
         'echasnovski/mini.nvim',
+        enabled = true,
         config = function()
             -- Better Around/Inside textobjects
             --
@@ -14,6 +15,11 @@ return {
 
             -- }
 
+            require('mini.statusline').setup()
+            require('mini.indentscope').setup()
+            require('mini.notify').setup()
+
+            -- require('mini.git').setup() --没 gitsigns好用感觉
 
             -- ... and there is more!
             --  Check out: https://github.com/echasnovski/mini.nvim

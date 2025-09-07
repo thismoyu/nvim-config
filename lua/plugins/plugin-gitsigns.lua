@@ -4,6 +4,7 @@ return {
     {
         'lewis6991/gitsigns.nvim',
         lazy = true,
+        enabled = true,
         event = 'BufRead',
         config = function()
             require("gitsigns").setup({

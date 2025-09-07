@@ -1,3 +1,6 @@
+-- need fzf command
+-- windows: winget install junegunn.fzf
+-- linux: download fzf from github.
 return {
     "ibhagwan/fzf-lua",
     dependencies = {

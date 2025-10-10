@@ -4,6 +4,7 @@ vim.lsp.enable("lua_ls")
 vim.lsp.enable("clangd")
 -- vim.lsp.enable("pylsp")
 vim.lsp.enable('pyright')
+vim.lsp.enable('rust-analyzer')
 
 -- 启用exrc特性。使neovim从当前工作目录中的.nvim.lua / .nvimrc /.exrc中读取局部属性，避免
 -- lsp clangd等需要频繁修改nvim配置引起的不便。

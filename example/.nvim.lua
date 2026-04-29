@@ -1,3 +1,5 @@
+-- compdb:
+-- aidegen libjni_custom_isphal_impl_aidl -s -n
 vim.lsp.config['clangd'] = {
   cmd = { 
   	'clangd',

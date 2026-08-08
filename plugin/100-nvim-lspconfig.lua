@@ -10,22 +10,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- Buffer local mappings.
 		-- See `:help vim.lsp.*` for documentation on any of the below functions
 		local opts = { buffer = ev.buf, silent = true }
-		local builtin = require("telescope.builtin")
+		local telescope_builtin = require("telescope.builtin")
 		--
 		opts.desc = "LSP all references"
-		keymap.set("n", "gA", builtin.lsp_references, opts) -- show definition, references
+		keymap.set("n", "gR", telescope_builtin.lsp_references, opts) -- show definition, references
 
 		opts.desc = "Go to declaration"
 		keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
 		opts.desc = "LSP definitions"
-		keymap.set("n", "gd", builtin.lsp_definitions, opts) -- show lsp definitions
+		keymap.set("n", "gd", telescope_builtin.lsp_definitions, opts) -- show lsp definitions
 
 		opts.desc = "LSP implementations"
-		keymap.set("n", "gi", builtin.lsp_implementations, opts) -- show lsp implementations
+		keymap.set("n", "gi", telescope_builtin.lsp_implementations, opts) -- show lsp implementations
 
 		-- opts.desc = "LSP type definitions"
-		-- keymap.set("n", "gt", builtin.lsp_type_definitions, opts) -- show lsp type definitions
+		-- keymap.set("n", "gt", telescope_builtin.lsp_type_definitions, opts) -- show lsp type definitions
 
 		opts.desc = "See available code actions"
 		keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
@@ -34,16 +34,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename, default: grn
 
 		opts.desc = "Show all open buffer diagnostics"
-		keymap.set("n", "<leader>D", builtin.diagnostics, opts) -- show  diagnostics for file
+		keymap.set("n", "<leader>D", telescope_builtin.diagnostics, opts) -- show  diagnostics for file
 
 		opts.desc = "Show line diagnostics"
 		keymap.set("n", "<leader>di", vim.diagnostic.open_float, opts) -- show diagnostics for line
-
-		opts.desc = "LSP incoming calls (Who calls this?)"
-		keymap.set("n", "<leader>li", builtin.lsp_incoming_calls, opts)
-
-		opts.desc = "LSP outgoing calls (What does this call?)"
-		keymap.set("n", "<leader>lo", builtin.lsp_outgoing_calls, opts)
 
 		----------------------------------------------------------------------------------------
 

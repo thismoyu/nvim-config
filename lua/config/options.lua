@@ -8,7 +8,7 @@ opt.shiftwidth = 4
 opt.expandtab = true -- expand tab to spaces.
 opt.smartindent = true -- Smart auto-indenting
 opt.autoindent = true -- Copy indent from current line
-opt.greprg = "rg --vimgrep" --using ripgrep if available
+opt.grepprg = "rg --vimgrep" --using ripgrep if available
 opt.grepformat = "%f:%l:%c:%m" -- filename, line number, column, content
 
 opt.cmdheight = 1 -- Command line height
@@ -27,11 +27,11 @@ opt.cursorline = true -- hightlight current line
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "UTF-8"
 
-
 opt.termguicolors = true -- 24 真彩色
-opt.signcolumn = "yes" -- Always show sign column
-opt.colorcolumn = "140" -- Show column at 100 characters
 
+--
+-- opt.signcolumn = "yes" -- Always show sign column
+-- opt.colorcolumn = "140" -- Show column at 100 characters
 
 -- windows
 opt.splitright = true -- split vertical window to the right
@@ -41,13 +41,7 @@ opt.splitbelow = true -- split horizontal window to the bottom
 opt.swapfile = false
 
 -- 系统剪贴板
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.schedule(function()
-  opt.clipboard = 'unnamedplus'
-end)
+opt.clipboard = 'unnamedplus'
 
 opt.completeopt = { 'menu', 'menuone', 'noselect' }
 

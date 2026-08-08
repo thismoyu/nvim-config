@@ -8,7 +8,10 @@ local map = vim.keymap.set
 -- opts: 相应的设置
 -- vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 
-
+-- 侧键后退 -> Ctrl + o (跳转回上一个位置)
+vim.keymap.set({'n', 'v'}, '<X1Mouse>', '<C-o>', { noremap = true, silent = true, desc = 'Jump Back' })
+-- 侧键前进 -> Ctrl + i (跳转到下一个位置)
+vim.keymap.set({'n', 'v'}, '<X2Mouse>', '<C-i>', { noremap = true, silent = true, desc = 'Jump Forward' })
 
 -- clear hightlight search
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search hightlight" })
@@ -52,9 +55,9 @@ map("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
 map("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
 map("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
 
--- paste & delete without yank
+-- paste & delete without yank, key 'd' reversed for diagnostic.
 vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste without yanking" })
-vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
+vim.keymap.set({ "n", "v" }, "<leader>x", '"_d', { desc = "Delete without yanking" })
 
 -- save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })

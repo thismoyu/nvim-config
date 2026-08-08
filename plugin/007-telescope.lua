@@ -51,12 +51,8 @@ local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Telescope live grep" })
--- vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Fuzzy find recent files" })
-vim.keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "Find string under cursor in cwd" })
-vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Lists items in the quickfix list" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
-vim.keymap.set("n", "<leader>fg", builtin.current_buffer_fuzzy_find, { desc = "Telescope file fuzzy finder" })
-vim.keymap.set("n", "<leader>fd", builtin.lsp_document_symbols, { desc = "Telescope LSP document symbols" })
+vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Telescope find recent files" })
 
 -- This keymap can be used to navigate
 vim.keymap.set("n", "<leader>b", function()
@@ -68,11 +64,6 @@ vim.keymap.set("n", "<leader>b", function()
 	})
 end, { desc = "Navigate into loaded buffers" })
 
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
-vim.keymap.set("n", "<leader>en", function()
-	builtin.find_files({
-		cwd = vim.fn.stdpath("config"),
-	})
-end)
+
 
 

@@ -1,0 +1,29 @@
+name: Rebase win onto main
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: rebase-win
+  cancel-in-progress: false
+
+jobs:
+  rebase:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Rebase win onto main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git checkout win
+          git rebase origin/main
+          git push --force-with-lease origin win

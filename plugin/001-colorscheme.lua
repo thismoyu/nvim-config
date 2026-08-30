@@ -1,12 +1,70 @@
 vim.pack.add{ { src = "https://github.com/catppuccin/nvim", name = "catppuccin" } }
 
 require("catppuccin").setup({
-	flavour = "latte", -- latte, frappe, macchiato, mocha
+	flavour = "auto", -- latte, frappe, macchiato, mocha
 	background = { -- :h background
-	    light = "latte",
+		light = "latte",
 		dark = "mocha",
+	},
+	-- Zed One Light / One Dark via color_overrides (catppuccin/nvim#323)
+	color_overrides = {
+		latte = {
+			rosewater = "#d3604f",
+			flamingo = "#d36151",
+			pink = "#a449ab",
+			mauve = "#a449ab",
+			red = "#de3e35",
+			maroon = "#d3604f",
+			peach = "#ad6e25",
+			yellow = "#c18401",
+			green = "#649f57",
+			teal = "#0997b3",
+			sky = "#3882b7",
+			sapphire = "#5c78e2",
+			blue = "#5b79e3",
+			lavender = "#5c78e2",
+			text = "#242529",
+			subtext1 = "#58585a",
+			subtext0 = "#7e8086",
+			overlay2 = "#7e8086",
+			overlay1 = "#a2a3a7",
+			overlay0 = "#b4b4bb",
+			surface2 = "#cacaca",
+			surface1 = "#dfdfe0",
+			surface0 = "#ebebec",
+			base = "#fafafa",
+			mantle = "#ebebec",
+			crust = "#dcdcdd",
+		},
+		mocha = {
+			rosewater = "#dce0e5",
+			flamingo = "#be5046",
+			pink = "#c678dd",
+			mauve = "#c678dd",
+			red = "#e06c75",
+			maroon = "#d07277",
+			peach = "#bf956a",
+			yellow = "#e5c07b",
+			green = "#98c379",
+			teal = "#56b6c2",
+			sky = "#6eb4bf",
+			sapphire = "#74ade8",
+			blue = "#61afef",
+			lavender = "#c8ccd4",
+			text = "#abb2bf",
+			subtext1 = "#a9afbc",
+			subtext0 = "#878a98",
+			overlay2 = "#878a98",
+			overlay1 = "#5d636f",
+			overlay0 = "#4e5a5f",
+			surface2 = "#454a56",
+			surface1 = "#363c46",
+			surface0 = "#2e343e",
+			base = "#282c33",
+			mantle = "#2f343e",
+			crust = "#3b414d",
+		},
 	},
 })
 
--- load the colorscheme here
-vim.cmd.colorscheme("catppuccin-latte")
+vim.cmd.colorscheme("catppuccin")

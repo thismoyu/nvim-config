@@ -3,6 +3,17 @@
 -- ABOUT : automatically run code on defined events (e.g. save, yank)
 -- ================================================================================================
 
+-- ftplugin 会在 FileType 时把 formatoptions 的 o 加回来（normal 下 o/O 延续注释）。
+-- 必须在 FileType 之后再去掉，仅靠 options.lua 里设置会被覆盖。
+local formatoptions_group = vim.api.nvim_create_augroup("FormatOptions", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	group = formatoptions_group,
+	pattern = "*",
+	callback = function()
+		vim.opt_local.formatoptions:remove("o")
+	end,
+})
+
 -- Restore last cursor position when reopening a file
 local last_cursor_group = vim.api.nvim_create_augroup("LastCursorGroup", {})
 vim.api.nvim_create_autocmd("BufReadPost", {

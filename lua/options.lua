@@ -11,6 +11,19 @@ opt.autoindent = true -- Copy indent from current line
 opt.grepprg = "rg --vimgrep" --using ripgrep if available
 opt.grepformat = "%f:%l:%c:%m" -- filename, line number, column, content
 
+
+-- 字母功能描述实用建议
+-- j 智能删除注释符。合并两行注释时，自动删掉多余的注释符号（如 //）。强烈推荐，现代编辑必备。
+-- c 注释自动折行。当注释超过 textwidth 限制时自动换行，并自动补全注释符。推荐，保持注释整齐。
+-- r 回车自动延续注释。在注释行按 Enter 键换行时，新行会自动插入注释符。推荐，写多行注释很方便。
+-- o O键自动延续注释。在普通模式下按 o 或 O 开辟新行时，自动插入注释符。视个人习惯而定。很多人觉得烦，经常会将其删除。
+-- q 允许使用 gq 格式化。允许使用 gq 快捷键对文本或注释进行段落重排。推荐。
+-- n 识别数字列表。格式化时能识别 1.、2. 等数字列表，换行时会自动对齐缩进。写 Markdown 强烈推荐。
+-- l 长行不自动折行。如果在插入模式下某一行的长度已经超过了 textwidth，不会强制将其折断。适合不希望代码被强制换行的人。
+-- t 文本自动折行。标准文本（非注释）超过 textwidth 时自动换行。代码编写不建议加，写文章可以加。
+-- 注意：ftplugin 会覆盖本项并加回 o；真正生效靠 autocmds.lua 里 FileType 后再 remove("o")
+opt.formatoptions = "jcrq"
+
 opt.cmdheight = 1 -- Command line height
 
 -- line wrapping

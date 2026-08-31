@@ -50,20 +50,10 @@ require("telescope").load_extension("fzf")
 local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Telescope live grep" })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+-- 
 vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Telescope find recent files" })
-
--- This keymap can be used to navigate
-vim.keymap.set("n", "<leader>b", function()
-	builtin.buffers({
-		sort_mru = true, -- Most Recently Used
-		ignore_current_buffer = true,
-		show_all_buffers = false, -- Do not show unloaded buffers
-		file_ignore_patterns = { "^term://" },
-	})
-end, { desc = "Navigate into loaded buffers" })
-
-
-
-
+vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Document symbols" })
+-- SearchEverywhere（对齐 ideavim <leader><space>）
+vim.keymap.set("n", "<leader><space>", builtin.find_files, { desc = "Search everywhere" })

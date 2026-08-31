@@ -36,17 +36,22 @@
 
 Leader 键为 `Space`。完整列表也可在 Neovim 中按 `<leader>?` 查看。
 
+多数快捷键与 `~/.ideavimrc` 对齐，便于 Neovim / JetBrains IdeaVim 共用肌肉记忆。
+
 #### 通用
 
 | 快捷键 | 说明 |
 | ------ | ---- |
 | `<C-s>` | 保存文件 |
+| `<leader>w` | 保存全部 |
+| `<leader>q` | 关闭当前窗口 |
 | `<leader>qq` | 退出全部 |
 | `<Esc>` | 清除搜索高亮 |
-| `<C-/>` | 切换注释 |
+| `<C-/>` | 切换注释（Normal 当前行 / Visual 选区；底层为 `gcc` / `gc`） |
 | `<leader>p` | 粘贴且不覆盖寄存器（Visual） |
 | `<leader>x` | 删除且不 yank |
 | `n` / `N` | 下一个 / 上一个搜索结果（居中） |
+| `<C-d>` / `<C-u>` | 半页下 / 上滚动（居中） |
 | `J` | 合并行并保持光标位置 |
 | `Alt-j` / `Alt-k` | 下移 / 上移行（或选区） |
 | `<` / `>` | Visual 缩进并保持选区 |
@@ -66,6 +71,7 @@ Leader 键为 `Space`。完整列表也可在 Neovim 中按 `<leader>?` 查看�
 | ------ | ---- |
 | `<C-n>` | 开关文件树 |
 | `<leader>e` | 聚焦文件树 |
+| `<leader>\`` | 在文件树中定位当前文件 |
 
 #### Buffer (bufferline)
 
@@ -76,6 +82,7 @@ Leader 键为 `Space`。完整列表也可在 Neovim 中按 `<leader>?` 查看�
 | `<leader>bd` | 关闭当前 buffer |
 | `<leader>bo` | 关闭其他 buffer |
 | `<leader>bb` | 选择 buffer |
+| `<leader>bl` | Telescope buffer 列表 |
 | `<leader>b` | Telescope 浏览已加载 buffer |
 
 #### 搜索 (Telescope)
@@ -83,9 +90,11 @@ Leader 键为 `Space`。完整列表也可在 Neovim 中按 `<leader>?` 查看�
 | 快捷键 | 说明 |
 | ------ | ---- |
 | `<leader>ff` | 查找文件 |
-| `<leader>fs` | 全文搜索 |
+| `<leader>fg` | 全文搜索（live grep） |
 | `<leader>fb` | 查找 buffer |
 | `<leader>fr` | 最近打开的文件 |
+| `<leader>fs` | 文档符号 |
+| `<leader><space>` | 查找文件（Search Everywhere 风格） |
 
 #### 代码大纲 (aerial)
 
@@ -94,15 +103,21 @@ Leader 键为 `Space`。完整列表也可在 Neovim 中按 `<leader>?` 查看�
 | `<leader>o` | 开关大纲（选中跳转后自动关闭） |
 | `{` / `}` | 大纲窗口内上 / 下一个符号（buffer-local） |
 
-#### LSP
+#### LSP / 诊断
 
 | 快捷键 | 说明 |
 | ------ | ---- |
 | `gd` | 跳转定义 |
-| `gr` | 查找引用 |
+| `gD` | 跳转类型定义 |
+| `gi` | 跳转实现 |
+| `gr` / `gu` | 查找引用 |
+| `gh` | 调用层次（Call Hierarchy） |
 | `K` | Hover 文档 |
 | `<leader>rn` | 重命名 |
+| `<leader>ca` | Code Action |
 | `<leader>fm` | 格式化 |
+| `[d` / `]d` | 上一个 / 下一个诊断 |
+| `<leader>d` | 显示当前诊断浮窗 |
 
 #### 补全 (blink.cmp)
 

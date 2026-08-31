@@ -69,12 +69,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local lsp = vim.lsp
         local bufopts = { noremap = true, silent = true }
 
-        keymap.set("n", "gr", lsp.buf.references, bufopts)
-        keymap.set("n", "gd", lsp.buf.definition, bufopts)
-        keymap.set("n", "<leader>rn", lsp.buf.rename, bufopts)
-        keymap.set("n", "K", lsp.buf.hover, bufopts)
+        keymap.set("n", "gr", lsp.buf.references, vim.tbl_extend("force", bufopts, { desc = "References" }))
+        keymap.set("n", "gu", lsp.buf.references, vim.tbl_extend("force", bufopts, { desc = "Find usages" }))
+        keymap.set("n", "gd", lsp.buf.definition, vim.tbl_extend("force", bufopts, { desc = "Goto definition" }))
+        keymap.set("n", "gD", lsp.buf.type_definition, vim.tbl_extend("force", bufopts, { desc = "Goto type definition" }))
+        keymap.set("n", "gi", lsp.buf.implementation, vim.tbl_extend("force", bufopts, { desc = "Goto implementation" }))
+        keymap.set("n", "gh", lsp.buf.incoming_calls, vim.tbl_extend("force", bufopts, { desc = "Call hierarchy" }))
+        keymap.set("n", "<leader>rn", lsp.buf.rename, vim.tbl_extend("force", bufopts, { desc = "Rename" }))
+        keymap.set("n", "<leader>ca", lsp.buf.code_action, vim.tbl_extend("force", bufopts, { desc = "Code action" }))
+        keymap.set("n", "K", lsp.buf.hover, vim.tbl_extend("force", bufopts, { desc = "Hover" }))
         keymap.set("n", "<leader>fm", function()
             vim.lsp.buf.format({ async = true })
-        end, bufopts)
+        end, vim.tbl_extend("force", bufopts, { desc = "Format" }))
     end,
 })

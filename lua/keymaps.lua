@@ -48,16 +48,36 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 map("n", "n", "nzzzv", { desc = "Next search result (centered)" })
 map("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
 
+-- 半页滚动居中（对齐 ideavim）
+map("n", "<C-d>", "<C-d>zz", { desc = "Scroll down (centered)" })
+map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up (centered)" })
+
 -- 合并行
 map("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
 
--- paste & delete without yank, key 'd' reversed for diagnostic.
+-- paste & delete without yank, key 'd' reserved for diagnostic.
 vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste without yanking" })
 vim.keymap.set({ "n", "v" }, "<leader>x", '"_d', { desc = "Delete without yanking" })
 
 -- save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+map("n", "<leader>w", "<cmd>wa<cr>", { desc = "Save All" })
 
 -- quit
+map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit Window" })
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
+-- 文件树定位到当前文件（对齐 ideavim <leader>`）
+map("n", "<leader>`", "<cmd>NvimTreeFindFile<CR>", { desc = "Reveal in file tree" })
+
+-- 诊断（对齐 ideavim [d ]d <leader>d）
+map("n", "[d", function()
+	vim.diagnostic.jump({ count = -1 })
+end, { desc = "Prev diagnostic" })
+map("n", "]d", function()
+	vim.diagnostic.jump({ count = 1 })
+end, { desc = "Next diagnostic" })
+map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+
+-- buffer list（对齐 ideavim <leader>bl）
+map("n", "<leader>bl", "<cmd>Telescope buffers<cr>", { desc = "Buffer list" })

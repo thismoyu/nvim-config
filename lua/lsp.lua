@@ -69,8 +69,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local lsp = vim.lsp
         local bufopts = { noremap = true, silent = true }
 
-        keymap.set("n", "gr", lsp.buf.references, vim.tbl_extend("force", bufopts, { desc = "References" }))
-        keymap.set("n", "gu", lsp.buf.references, vim.tbl_extend("force", bufopts, { desc = "Find usages" }))
+        local lsp_references = require("telescope.builtin").lsp_references
+        keymap.set("n", "gr", lsp_references, vim.tbl_extend("force", bufopts, { desc = "References" }))
+        keymap.set("n", "gu", lsp_references, vim.tbl_extend("force", bufopts, { desc = "Find usages" }))
         keymap.set("n", "gd", lsp.buf.definition, vim.tbl_extend("force", bufopts, { desc = "Goto definition" }))
         keymap.set("n", "gD", lsp.buf.type_definition, vim.tbl_extend("force", bufopts, { desc = "Goto type definition" }))
         keymap.set("n", "gi", lsp.buf.implementation, vim.tbl_extend("force", bufopts, { desc = "Goto implementation" }))
